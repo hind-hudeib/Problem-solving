@@ -20,19 +20,17 @@ function fibonacci(num) {
 
 // 2- The sum of Array Elements:
 
-let array = [1,2,3,4];
+function arraySum(arr){
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  console.log(sum); 
+}
 
+const numbers = [1, 2, 3, 4, 5];
+arraySum(numbers);
 
-    function sum(array, n) {
-        n ||= 0;  //It means if n variable is not defined or its not numeric then assign 0 to the n variable.
-        if (n === array.length) {
-            return 0;
-        } else {
-            return array[n] + sum(array, n + 1);
-        }
-    }
-
-    sum(array);
 
 
 
@@ -45,7 +43,7 @@ function reverseString(str){
     }
      else{
         for(let i = str.length -1 ; i >= 0 ; i--){
-            return str[i] + reverseString(str.slice(0, -1));
+            return str[i] + reverseString(str.slice(0, i));
         }
      }
 }
